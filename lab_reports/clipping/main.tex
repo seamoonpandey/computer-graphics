@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\begin{document}
+
+\section*{PROBLEM STATEMENT}
+To implement the Cohen-Sutherland and Liang-Barsky Line Clipping Algorithms in C using OpenGL, and to draw and clip a line segment against a defined clipping window. The program will also draw the coordinate axes for better visualization.
+
+\section*{THEORY}
+Line clipping algorithms are used in computer graphics to determine which portions of a line lie inside a specified rectangular clipping window. The Cohen-Sutherland and Liang-Barsky algorithms are two such methods, each with its own approach to line clipping.
+
+\subsection*{Cohen-Sutherland Algorithm}
+The Cohen-Sutherland Algorithm divides the 2D space into nine regions, using a 4-bit outcode for each endpoint of the line. The outcode indicates the location of the point relative to the clipping window. Depending on the outcodes, the algorithm either accepts, rejects, or clips the line.
+
+\subsection*{Liang-Barsky Algorithm}
+The Liang-Barsky Algorithm uses parametric line equations and inequalities to find intersections of a line with the clipping window edges. This method is more efficient than Cohen-Sutherland, as it reduces the number of comparisons needed.
+
+\section*{ALGORITHMS}
+
+\subsection*{Cohen-Sutherland Algorithm}
+\begin{enumerate}
+    \item Initialize the outcodes for both endpoints of the line.
+    \item Use bitwise operations to determine trivial acceptance or rejection.
+    \item If neither, find the intersection point and update the outcode.
+    \item Repeat until the line is either accepted or rejected.
+\end{enumerate}
+
+\subsection*{Liang-Barsky Algorithm}
+\begin{enumerate}
+    \item Calculate the differences \(dx\) and \(dy\) for the line segment.
+    \item For each boundary, compute the parametric values of intersections.
+    \item Adjust the parameter range [u1, u2] based on the intersections.
+    \item If the final range is valid, calculate the clipped line segment.
+\end{enumerate}
+
+\section*{FLOWCHARTS}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{cohen-sutherland-flowchart.png}
+\includegraphics[width=0.7\textwidth]{liang-barsky-flowchart.png}
+\end{center}
+
+\section*{SAMPLE I/O}
+\textbf{Input:}
+\begin{verbatim}
+Line endpoints: (10, 10) and (500, 500)
+Clipping window: xmin = 50, ymin = 50, xmax = 400, ymax = 400
+\end{verbatim}
+
+\textbf{Output:}
+The line segment is clipped according to the specified clipping window and displayed in a window with coordinate axes.
+
+\section*{DISCUSSIONS}
+\begin{itemize}
+    \item \textbf{Cohen-Sutherland Algorithm}: 
+    \begin{itemize}
+        \item \textbf{Advantages}: Simple to implement, works well with trivial accept/reject cases.
+        \item \textbf{Disadvantages}: May require multiple iterations to clip complex cases.
+    \end{itemize}
+    \item \textbf{Liang-Barsky Algorithm}:
+    \begin{itemize}
+        \item \textbf{Advantages}: More efficient with fewer calculations, particularly for complex cases.
+        \item \textbf{Disadvantages}: Slightly more complex to implement compared to Cohen-Sutherland.
+    \end{itemize}
+    \item \textbf{Applications}: Both algorithms are used in computer graphics for rendering scenes, CAD software, and game development.
+\end{itemize}
+
+\section*{CONCLUSION}
+Both the Cohen-Sutherland and Liang-Barsky Line Clipping Algorithms are fundamental in computer graphics for handling line clipping against rectangular windows. Each algorithm has its strengths and trade-offs, making them suitable for different scenarios. Implementing these algorithms using OpenGL provides a visual understanding of their operations and effectiveness.
+
+\end{document}
