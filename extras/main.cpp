@@ -79,6 +79,47 @@ void drawGarage()
     glEnd();
 }
 
+void outlinedRectangle(float x1, float y1, float x2, float y2, float r, float g, float b)
+{
+    drawRectangle(x1, y1, x2, y2, r, g, b);
+    glColor3f(0, 0, 0);
+    glBegin(GL_LINE_LOOP);
+    glVertex2f(x1, y1);
+    glVertex2f(x1, y2);
+    glVertex2f(x2, y2);
+    glVertex2f(x2, y1);
+    glEnd();
+}
+void drawStairs()
+{
+    outlinedRectangle(-0.4, -0.5, 0.4, -0.55, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.41, -0.55, 0.41, -0.6, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.42, -0.6, 0.42, -0.65, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.43, -0.65, 0.43, -0.7, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.43, -0.65, 0.43, -0.7, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.44, -0.7, 0.44, -0.75, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.45, -0.75, 0.45, -0.8, 0.9, 0.9, 0.9);
+    outlinedRectangle(-0.46, -0.8, 0.46, -0.85, 0.9, 0.9, 0.9);
+}
+
+void drawGarden()
+{
+    glBegin(GL_POLYGON);
+    glColor3f(0.5, 0.5, 0.5);
+    glVertex2f(-0.2, -0.85);
+    glVertex2f(0.2, -0.85);
+    glVertex2f(0.14, -0.5);
+    glVertex2f(-0.14, -0.5);
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3f(0.5, 0.7, 0.5);
+    glVertex2f(-0.15, -0.8);
+    glVertex2f(0.15, -0.8);
+    glVertex2f(0.11, -0.45);
+    glVertex2f(-0.11, -0.45);
+    glEnd();
+}
+
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -141,6 +182,10 @@ void display()
     drawWindow(-0.15, -0.1, -0.05, 0.55);
     drawWindow(0.05, -0.1, 0.15, 0.55);
     drawWindow(0.25, -0.1, 0.35, 0.55);
+
+    drawStairs();
+
+    drawGarden();
 
     // the entrance with big door with our primary building color
     drawRectangle(-0.4, -0.5, 0.4, -0.2, 0.9647, 0.8431, 0.4863);
