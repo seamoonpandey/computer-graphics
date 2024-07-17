@@ -85,19 +85,44 @@ void display()
     drawRectangle(0.4, 0.7, 0.93, 0.71, 0.8627, 0.9686, 1.0);   // right side
 
     // Left side of the building (30%)
-    drawRectangle(-0.9, -0.5, -0.85, 0.5, 0.8235, 0.3843, 0.1804);  // First pillar
+    drawRectangle(-0.9, -0.5, -0.85, 0.5, 0.8235, 0.3843, 0.1804); // First pillar
+    drawWindow(-0.84, 0.3, -0.76, 0.4);
+    drawWindow(-0.84, 0.1, -0.76, 0.2);
+    drawWindow(-0.84, -0.1, -0.76, 0);
     drawRectangle(-0.75, -0.5, -0.70, 0.5, 0.8235, 0.3843, 0.1804); // Second pillar
-    drawRectangle(-0.6, -0.5, -0.55, 0.5, 0.8235, 0.3843, 0.1804);  // Third pillar
-    drawRectangle(-0.45, -0.5, -0.4, 0.5, 0.8235, 0.3843, 0.1804);  // Fourth pillar
+    drawWindow(-0.69, 0.3, -0.61, 0.4);
+    drawWindow(-0.69, 0.1, -0.61, 0.2);
+    drawWindow(-0.69, -0.1, -0.61, 0);
+    drawRectangle(-0.6, -0.5, -0.55, 0.5, 0.8235, 0.3843, 0.1804); // Third pillar
+    drawWindow(-0.54, 0.3, -0.46, 0.4);
+    drawWindow(-0.54, 0.1, -0.46, 0.2);
+    drawWindow(-0.54, -0.1, -0.46, 0);
+
+    drawRectangle(-0.45, -0.5, -0.4, 0.5, 0.8235, 0.3843, 0.1804); // Fourth pillar
 
     // Right side of the building (30%)
     drawRectangle(0.4, -0.5, 0.45, 0.5, 0.8235, 0.3843, 0.1804); // Fourth pillar
+    drawWindow(0.46, 0.3, 0.54, 0.4);
+    drawWindow(0.46, 0.1, 0.54, 0.2);
+    drawWindow(0.46, -0.1, 0.54, 0);
+
     drawRectangle(0.85, -0.5, 0.9, 0.5, 0.8235, 0.3843, 0.1804); // Third pillar
+    drawWindow(0.76, 0.3, 0.84, 0.4);
+    drawWindow(0.76, 0.1, 0.84, 0.2);
+    drawWindow(0.76, -0.1, 0.84, 0);
     drawRectangle(0.7, -0.5, 0.75, 0.5, 0.8235, 0.3843, 0.1804); // Second pillar
+    drawWindow(0.61, 0.3, 0.69, 0.4);
+    drawWindow(0.61, 0.1, 0.69, 0.2);
+    drawWindow(0.61, -0.1, 0.69, 0);
     drawRectangle(0.55, -0.5, 0.6, 0.5, 0.8235, 0.3843, 0.1804); // First pillar
 
     // Middle part of the building (40%)
     drawRectangle(-0.4, -0.5, 0.4, 0.5, 0.8235, 0.3843, 0.1804);
+    drawWindow(-0.35, -0.1, -0.25, 0.55);
+    drawWindow(-0.15, -0.1, -0.05, 0.55);
+    drawWindow(0.05, -0.1, 0.15, 0.55);
+    drawWindow(0.25, -0.1, 0.35, 0.55);
+
     // the entrance with big door with our primary building color
     drawRectangle(-0.4, -0.5, 0.4, -0.2, 0.9647, 0.8431, 0.4863);
     // red strip over the entrance
