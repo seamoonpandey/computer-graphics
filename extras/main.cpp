@@ -1,4 +1,5 @@
 #include <GL/glut.h>
+#include <math.h>
 
 void display();
 void init();
@@ -7,8 +8,8 @@ int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize(800, 600);
-    glutInitWindowPosition(100, 100);
+    glutInitWindowSize(1000, 800);
+    glutInitWindowPosition(100, 0);
     glutCreateWindow("RIC building");
     init();
     glutDisplayFunc(display);
@@ -47,9 +48,24 @@ void drawWindow(float x1, float y1, float x2, float y2)
     glEnd();
 }
 
+void drawCircle(float x, float y, float radius, float r, float g, float b)
+{
+    glColor3f(r, g, b);
+    glBegin(GL_POLYGON);
+    for (int i = 0; i < 360; i++)
+    {
+        float theta = i * 3.142 / 180;
+        glVertex2f(x + radius * cos(theta), y + radius * sin(theta));
+    }
+    glEnd();
+}
+
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
+
+    drawCircle(0, 0.4, 0.54, 0.8627, 0.9686, 1.0);
+    drawCircle(0, 0.4, 0.53, 0.8235, 0.3843, 0.1804);
 
     // Building background
     drawRectangle(-0.9, -0.5, 0.9, 0.5, 0.9647, 0.8431, 0.4863);
@@ -61,6 +77,9 @@ void display()
     // blue strap
     drawRectangle(-0.93, 0.5, -0.4, 0.51, 0.8627, 0.9686, 1.0); // left side
     drawRectangle(0.4, 0.5, 0.93, 0.51, 0.8627, 0.9686, 1.0);   // right side
+
+    // blue strap at the center
+    drawRectangle(-0.4, 0.55, 0.4, 0.56, 0.8627, 0.9686, 1.0);
     // blue strap over the ralling
     drawRectangle(-0.93, 0.7, -0.4, 0.71, 0.8627, 0.9686, 1.0); // left side
     drawRectangle(0.4, 0.7, 0.93, 0.71, 0.8627, 0.9686, 1.0);   // right side
@@ -76,6 +95,30 @@ void display()
     drawRectangle(0.85, -0.5, 0.9, 0.5, 0.8235, 0.3843, 0.1804); // Third pillar
     drawRectangle(0.7, -0.5, 0.75, 0.5, 0.8235, 0.3843, 0.1804); // Second pillar
     drawRectangle(0.55, -0.5, 0.6, 0.5, 0.8235, 0.3843, 0.1804); // First pillar
+
+    // Middle part of the building (40%)
+    drawRectangle(-0.4, -0.5, 0.4, 0.5, 0.8235, 0.3843, 0.1804);
+    // the entrance with big door with our primary building color
+    drawRectangle(-0.4, -0.5, 0.4, -0.2, 0.9647, 0.8431, 0.4863);
+    // red strip over the entrance
+    drawRectangle(-0.5, -0.2, 0.5, -0.15, 0.7961, 0.2706, 0.1725);
+    // blue strip over the entrance right below the red strap
+    drawRectangle(-0.5, -0.2, 0.5, -0.22, 0.8627, 0.9686, 1.0);
+
+    // door at the entrance
+    drawRectangle(-0.3, -0.5, -.01, -0.25, 0.110, 0.070, 0.067);
+    drawRectangle(0.01, -0.5, 0.3, -0.25, 0.110, 0.070, 0.067);
+
+    // circle at the circumference of the building
+    // left side
+    drawCircle(-.2, .67, 0.05, 0.8627, 0.9686, 1.0);
+    drawCircle(-.2, .67, 0.04, 1, 1, 1);
+    // center
+    drawCircle(0, .7, 0.06, 0.8627, 0.9686, 1.0);
+    drawCircle(0, .7, 0.05, 1, 1, 1);
+    // right side
+    drawCircle(0.2, .67, 0.05, 0.8627, 0.9686, 1.0);
+    drawCircle(0.2, .67, 0.04, 1, 1, 1);
 
     glFlush();
 }
