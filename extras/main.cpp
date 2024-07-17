@@ -198,6 +198,12 @@ void display()
     drawRectangle(-0.3, -0.5, -.01, -0.25, 0.110, 0.070, 0.067);
     drawRectangle(0.01, -0.5, 0.3, -0.25, 0.110, 0.070, 0.067);
 
+    // entrance pillars
+    drawRectangle(-0.49, -0.5, -0.45, -0.22, 1, 1, 1);
+    drawRectangle(0.45, -0.5, 0.49, -0.22, 1, 1, 1);
+    drawRectangle(-.2, -0.5, -.16, -0.22, 1, 1, 1);
+    drawRectangle(.2, -0.5, .16, -0.22, 1, 1, 1);
+
     // circle at the circumference of the building
     // left side
     drawCircle(-.2, .67, 0.05, 0.8627, 0.9686, 1.0);
