@@ -44,8 +44,15 @@ void display()
     drawRectangle(-0.9, -0.5, 0.9, 0.5, 0.9647, 0.8431, 0.4863);
 
     // Roof
-    // drawRectangle(-1.0, 0.5, 1.0, 1.0, 0.7961, 0.2706, 0.1725); // left side
-    // drawRectangle(-1.0, 0.5, 1.0, 1.0, 0.7961, 0.2706, 0.1725); // right side
+    // ralling
+    drawRectangle(-0.93, 0.5, -0.4, 0.7, 0.7961, 0.2706, 0.1725); // left side
+    drawRectangle(0.4, 0.5, 0.93, 0.7, 0.7961, 0.2706, 0.1725);   // right side
+    // blue strap
+    drawRectangle(-0.93, 0.5, -0.4, 0.51, 0.8627, 0.9686, 1.0); // left side
+    drawRectangle(0.4, 0.5, 0.93, 0.51, 0.8627, 0.9686, 1.0);   // right side
+    // blue strap over the ralling
+    drawRectangle(-0.93, 0.7, -0.4, 0.71, 0.8627, 0.9686, 1.0); // left side
+    drawRectangle(0.4, 0.7, 0.93, 0.71, 0.8627, 0.9686, 1.0);   // right side
 
     // Left side of the building (30%)
     drawRectangle(-0.9, -0.5, -0.85, 0.5, 0.8235, 0.3843, 0.1804);  // First pillar
