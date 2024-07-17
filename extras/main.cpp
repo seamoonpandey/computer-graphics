@@ -43,15 +43,21 @@ void display()
     // Building background
     drawRectangle(-0.9, -0.5, 0.9, 0.5, 0.9647, 0.8431, 0.4863);
 
-    // Left side of the building
+    // Roof
+    // drawRectangle(-1.0, 0.5, 1.0, 1.0, 0.7961, 0.2706, 0.1725); // left side
+    // drawRectangle(-1.0, 0.5, 1.0, 1.0, 0.7961, 0.2706, 0.1725); // right side
+
+    // Left side of the building (30%)
     drawRectangle(-0.9, -0.5, -0.85, 0.5, 0.8235, 0.3843, 0.1804);  // First pillar
     drawRectangle(-0.75, -0.5, -0.70, 0.5, 0.8235, 0.3843, 0.1804); // Second pillar
     drawRectangle(-0.6, -0.5, -0.55, 0.5, 0.8235, 0.3843, 0.1804);  // Third pillar
+    drawRectangle(-0.45, -0.5, -0.4, 0.5, 0.8235, 0.3843, 0.1804);  // Fourth pillar
 
-    // Right side of the building
-    drawRectangle(0.55, -0.5, 0.6, 0.5, 0.8235, 0.3843, 0.1804); // First pillar
-    drawRectangle(0.7, -0.5, 0.75, 0.5, 0.8235, 0.3843, 0.1804); // Second pillar
+    // Right side of the building (30%)
+    drawRectangle(0.4, -0.5, 0.45, 0.5, 0.8235, 0.3843, 0.1804); // Fourth pillar
     drawRectangle(0.85, -0.5, 0.9, 0.5, 0.8235, 0.3843, 0.1804); // Third pillar
+    drawRectangle(0.7, -0.5, 0.75, 0.5, 0.8235, 0.3843, 0.1804); // Second pillar
+    drawRectangle(0.55, -0.5, 0.6, 0.5, 0.8235, 0.3843, 0.1804); // First pillar
 
     glFlush();
 }
