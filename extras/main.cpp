@@ -60,12 +60,31 @@ void drawCircle(float x, float y, float radius, float r, float g, float b)
     glEnd();
 }
 
+void drawGarage()
+{
+    drawRectangle(-0.88, -0.7, -0.48, -0.4, 0.9647, 0.8431, 0.4863);
+    drawRectangle(-0.86, -0.7, -0.5, -0.42, 0.6471, 0.5569, 0.510);
+
+    // Draw blue curve semi ellipse
+    glColor3f(0.6118, 0.4549, 0.2078);
+
+    glBegin(GL_POLYGON);
+    for (int i = 0; i <= 180; i++)
+    {
+        float theta = i * 3.142 / 180;
+        float x = -0.68 + 0.2 * cos(theta);
+        float y = -0.4 + 0.1 * sin(theta);
+        glVertex2f(x, y);
+    }
+    glEnd();
+}
+
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
 
-    drawCircle(0, 0.4, 0.54, 0.8627, 0.9686, 1.0);
-    drawCircle(0, 0.4, 0.53, 0.8235, 0.3843, 0.1804);
+    drawCircle(0, 0.4, 0.52, 0.8627, 0.9686, 1.0);
+    drawCircle(0, 0.4, 0.5, 0.8235, 0.3843, 0.1804);
 
     // Building background
     drawRectangle(-0.9, -0.5, 0.9, 0.5, 0.9647, 0.8431, 0.4863);
@@ -144,6 +163,10 @@ void display()
     // right side
     drawCircle(0.2, .67, 0.05, 0.8627, 0.9686, 1.0);
     drawCircle(0.2, .67, 0.04, 1, 1, 1);
+
+    // for the shutter part
+
+    drawGarage();
 
     glFlush();
 }
