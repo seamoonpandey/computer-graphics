@@ -36,6 +36,17 @@ void drawRectangle(float x1, float y1, float x2, float y2, float r, float g, flo
     glEnd();
 }
 
+void drawWindow(float x1, float y1, float x2, float y2)
+{
+    drawRectangle(x1, y1, x2, y2, 0.8627, 0.9686, 1.0);
+    // Draw divider line
+    glColor3f(0.0, 0.0, 0.0);
+    glBegin(GL_LINES);
+    glVertex2f((x1 + x2) / 2, y1);
+    glVertex2f((x2 + x1) / 2, y2);
+    glEnd();
+}
+
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
